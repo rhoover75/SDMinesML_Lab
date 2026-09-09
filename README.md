@@ -58,6 +58,17 @@ Everything is plain HTML — edit the relevant page directly:
   initials, and detail line. Avatar colors cycle through a small palette
   defined inline — pick any of the existing hex values, or add your own.
 
+## Design
+
+"Contour" theme — bone-white paper background, ink-black text, a single
+pine-teal accent (`#1f6f6b`), with ochre (`#a67c2e`) reserved for small
+kickers and the faint topographic contour-line motif in each page's hero
+(a quiet nod to the manifold/subspace-learning research — level sets of a
+function, drawn as literal contour lines). Headings are set in Newsreader
+(serif), body text in Public Sans. All of it lives in
+`assets/css/style.css` as CSS custom properties at the top of the file —
+change a value there to retint the whole site.
+
 ## Notes on content transfer
 
 Text content (bio, news, publications, people, research project
