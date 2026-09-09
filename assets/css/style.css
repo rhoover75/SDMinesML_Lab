@@ -79,13 +79,19 @@ img { max-width: 100%; display: block; }
 
 .brand {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 10px;
   color: var(--ink);
   font-family: "Newsreader", Georgia, serif;
   font-size: 1.12rem;
   font-weight: 600;
   letter-spacing: 0.01em;
+}
+
+.brand-mark {
+  height: 34px;
+  width: auto;
+  display: block;
 }
 
 .brand small {
@@ -152,11 +158,19 @@ nav.primary-nav a.active {
   position: relative;
   display: grid;
   grid-template-columns: 1.3fr 1fr;
-  gap: 44px;
+  grid-template-areas:
+    "intro   photo"
+    "content photo";
+  column-gap: 44px;
+  row-gap: 0;
   align-items: center;
 }
 
+.hero-intro { grid-area: intro; }
+.hero-content { grid-area: content; }
+
 .hero-eyebrow {
+  display: inline-block;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-size: 0.76rem;
@@ -209,14 +223,11 @@ nav.primary-nav a.active {
 .btn.ghost:hover { background: var(--paper-2); border-color: var(--ink-faint); color: var(--ink); }
 
 .hero-photo {
+  grid-area: photo;
   position: relative;
-  border-radius: var(--radius);
-  overflow: hidden;
-  border: 1px solid var(--line);
-  background: var(--surface);
 }
 
-.hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+.hero-photo img { width: 100%; height: 100%; object-fit: contain; display: block; }
 
 /* ---------- sections ---------- */
 
@@ -462,8 +473,15 @@ footer.site-footer .wrap {
 /* ---------- responsive ---------- */
 
 @media (max-width: 860px) {
-  .hero .wrap { grid-template-columns: 1fr; }
-  .hero-photo { max-width: 420px; }
+  .hero .wrap {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "intro"
+      "photo"
+      "content";
+    row-gap: 20px;
+  }
+  .hero-photo { max-width: 420px; margin: 0 auto; }
   .project-card { grid-template-columns: 1fr; }
   .project-icon { width: 68px; height: 68px; }
   .project-icon svg { width: 36px; height: 36px; }
