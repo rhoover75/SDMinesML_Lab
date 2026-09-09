@@ -133,16 +133,17 @@ nav.primary-nav a.active {
 .hero {
   position: relative;
   background: var(--paper);
-  padding: 54px 0 58px;
+  padding: 36px 0 58px;
   overflow: hidden;
   border-bottom: 1px solid var(--line);
 }
 
 .hero-lines {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100%;
+  height: 30px;
   opacity: 0.6;
   pointer-events: none;
 }
